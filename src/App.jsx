@@ -1,11 +1,14 @@
 import './App.css'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 function App() {
 
 
   return (
    <div>
-    <h1 className='text-2xl'>TechEnchant.com</h1>
+    <Header />
+    <Footer />
    </div>
   )
 }
