@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { headerNavLink } from "../constant";
 import { Link, useLocation } from "react-router-dom";
+import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import TextField from "@mui/material/TextField";
 import { MdArrowOutward } from "react-icons/md";
@@ -8,24 +9,26 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import { InputLabel } from "@mui/material";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Header() {
   const [openDialog, setOpenDialog] = useState(false);
   const location = useLocation();
 
   const [age, setAge] = React.useState("");
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className="flex justify-between items-center px-28 py-6 bg-blue-300">
+    <div className="w-full flex justify-between items-center px-3 md:px-28 md:py-6 py-7 bg-blue-300">
       {/* Logo */}
       <div>
-        <h1 className="text-2xl uppercase font-bold bg-gradient-to-r from-blue-500 to-purple-700 text-transparent bg-clip-text">
+        <h1 className="md:text-2xl text-xl uppercase font-bold bg-gradient-to-r from-blue-500 to-purple-700 text-transparent bg-clip-text">
           TechEnchant.
         </h1>
       </div>
 
       {/* Navigation Links */}
-      <div className="flex gap-4 uppercase ">
+      <div className="md:flex gap-4 uppercase hidden ">
         {headerNavLink.map((item) => (
           <div key={item.id} className="relative group list-none ">
             {/* Main Nav Item */}
@@ -61,12 +64,41 @@ function Header() {
         ))}
       </div>
 
+      <div className="md:hidden flex rounded-full p-2 text-2xl">
+        {openMenu ? (
+          <RxCross2 onClick={() => setOpenMenu(!openMenu)} />
+        ) : (
+          <RiMenu3Fill onClick={() => setOpenMenu(!openMenu)} />
+        )}
+      </div>
+
+      {openMenu && (
+        <div className="w-full z-10 bg-blue-300 absolute top-0 left-0 animate-slide-down">
+          <RxCross2
+            className="text-2xl text-black absolute top-9 right-5 cursor-pointer"
+            onClick={() => setOpenMenu(false)}
+          />
+          <div className="flex flex-col mt-16 bg-blue-300">
+            {headerNavLink.map((item) => (
+              <Link
+                key={item.id}
+                to={item.path}
+                className="px-4 py-3 border-b border-amber-300 text-black font-medium"
+                onClick={() => setOpenMenu(false)}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Enquiry Button with Dialog */}
-      <div className="">
+      <div className="hidden md:flex">
         <button
           onClick={() => setOpenDialog(!openDialog)}
-          className="border relative flex items-center border-black hover:border-slate-500 
-      rounded-full px-4 py-2 group overflow-hidden transition-all duration-300 w-[125px]"
+          className=" border relative flex items-center border-black hover:border-slate-500 
+      rounded-full px-4 py-2  group overflow-hidden transition-all duration-300 w-[125px]"
         >
           {/* Enquiry Text (Hidden on Hover) */}
           <span className="group-hover:opacity-0 transition-opacity duration-300">
@@ -87,7 +119,7 @@ function Header() {
 
         {openDialog && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-            <div className="bg-white rounded-md shadow-lg p-4 py-5 flex max-w-4xl">
+            <div className="bg-white rounded-md shadow-lg p-4 py-2 flex max-w-4xl">
               <div className="w-full p-2">
                 <img
                   className="h-full"
@@ -101,7 +133,7 @@ function Header() {
                   className="absolute right-2 cursor-pointer text-slate-400 hover:text-black"
                   onClick={() => setOpenDialog(false)}
                 />
-                <div className="flex flex-col gap-3 mt-12">
+                <div className="flex flex-col gap-4 mt-12 mb-7">
                   <TextField fullWidth label="Full Name" variant="outlined" />
                   <TextField fullWidth label="Email" variant="outlined" />
 
@@ -116,9 +148,9 @@ function Header() {
                       label="Select Service"
                       // onChange={handleChange}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      {/* <MenuItem value={30}>Thirty</MenuItem> */}
+                      <MenuItem value={10}>SEO</MenuItem>
+                      <MenuItem value={20}>Web Development</MenuItem>
+                      <MenuItem value={30}>Graphics Design</MenuItem>
                     </Select>
                   </FormControl>
 
@@ -131,7 +163,7 @@ function Header() {
                   />
                   <button
                     type="submit"
-                    className="bg-blue-500 rounded-md py-2 text-white  hover:opacity-80"
+                    className="bg-blue-500 mt-2 rounded-md py-2 text-white  hover:opacity-80"
                   >
                     Submit
                   </button>

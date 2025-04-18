@@ -61,22 +61,17 @@ export const socialMediaIcons = [
   {
     id: "1",
     icon: <IoLogoLinkedin />,
-    url: "https://www.linkedin.com/in/poojanaitam/",
+    url: "https://www.linkedin.com/company/techenchant/?viewAsMember=true",
   },
   {
     id: "2",
     icon: <FaInstagram />,
-    url: "https://www.linkedin.com/in/poojanaitam/",
+    url: "https://www.instagram.com/techenchant8/?hl=en",
   },
   {
     id: "3",
-    icon: <MdOutlineEmail />,
-    url: "https://www.linkedin.com/in/poojanaitam/",
-  },
-  {
-    id: "4",
     icon: <FaSquareXTwitter />,
-    url: "https://www.linkedin.com/in/poojanaitam/",
+    url: "https://x.com/TechEnchant",
   },
 ];
 
@@ -112,39 +107,41 @@ export const services = [
   },
   {
     id: "03",
-    title: "UI/UX",
-    icon: <IoChevronDownSharp />,
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
-  },
-  {
-    id: "04",
-    title: "Google Ads",
-    icon: <IoChevronDownSharp />,
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
-  },
-  {
-    id: "05",
-    title: "Social Media Marketing",
-    icon: <IoChevronDownSharp />,
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
-  },
-  {
-    id: "06",
     title: "Graphics Designer",
     icon: <IoChevronDownSharp />,
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
   },
+
+  // {
+  //   id: "04",
+  //   title: "Google Ads",
+  //   icon: <IoChevronDownSharp />,
+  //   content:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
+  // },
+  // {
+  //   id: "05",
+  //   title: "Social Media Marketing",
+  //   icon: <IoChevronDownSharp />,
+  //   content:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
+  // },
+  // {
+  //   id: "06",
+  //   title: "UI/UX",
+  //   icon: <IoChevronDownSharp />,
+  //   content:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum!",
+  // },
+
 ];
 
 export const projects = [
-  { id: 1, img: "src/assets/PersonalPortfolio.png", title: "Portfolio Website", category: "Web Development" },
-  { id: 2, title: "SEO Audit Tool", category: "SEO" },
-  { id: 3, title: "Brand Logo Design", category: "Graphic Design" },
-  { id: 4, title: "E-commerce Site", category: "Web Development" },
+  { id: 1, img: "https://img.freepik.com/free-psd/forests-day-landing-page-template-with-photo_23-2148881411.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740", title: "Portfolio Website", category: "Web Development" },
+  { id: 2, img: "https://img.freepik.com/free-psd/flat-design-webinar-template_23-2150390595.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",  title: "SEO Audit Tool", category: "SEO" },
+  { id: 3, img: "https://img.freepik.com/free-vector/business-landing-page-with-photo_23-2148312357.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",  title: "Brand Logo Design", category: "Graphic Design" },
+  { id: 4, img: "https://img.freepik.com/free-psd/holiday-landing-page-template_23-2149066886.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740", title: "E-commerce Site", category: "Web Development" },
   // ... more
 ];
 
@@ -181,7 +178,7 @@ export const contactInfo = [
   {
     id: "1",
     icon: <MdPhone />,
-    title: "8748376464",
+    title: "0000000001",
   },
   {
     id: "2",
@@ -191,6 +188,6 @@ export const contactInfo = [
   {
     id: "3",
     icon: <MdOutlineEmail />,
-    title: "hello@techenchant.com",
+    title: "techenchant8@gmail.com",
   },
 ];
