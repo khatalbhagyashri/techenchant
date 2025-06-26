@@ -19,12 +19,14 @@ function Header() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className="w-full flex justify-between items-center px-3 md:px-28 md:py-6 py-7 bg-blue-300">
+    <div className="w-full fixed top-0 z-10 flex justify-between items-center px-3 md:px-28 md:py-5 py-7 bg-[#e8f1fa]">
       {/* Logo */}
       <div>
-        <h1 className="md:text-2xl text-xl uppercase font-bold bg-gradient-to-r from-blue-500 to-purple-700 text-transparent bg-clip-text">
-          TechEnchant.
-        </h1>
+        <Link to="/">
+          <h1 className="md:text-2xl text-xl uppercase font-bold bg-gradient-to-t from-primaryColor to-blue-300 text-transparent bg-clip-text">
+            TechEnchant.
+          </h1>
+        </Link>
       </div>
 
       {/* Navigation Links */}
@@ -32,18 +34,20 @@ function Header() {
         {headerNavLink.map((item) => (
           <div key={item.id} className="relative group list-none ">
             {/* Main Nav Item */}
-            <li>
-              <Link
-                to={item.path}
-                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${
-                  location.pathname === item.path
-                    ? "text-purple-700 "
-                    : "hover:text-purple-700"
-                }`}
-              >
-                {item.title} <span>{item.icon}</span>
-              </Link>
-            </li>
+            <ul>
+              <li>
+                <Link
+                  to={item.path}
+                  className={`px-4 py-2 text-base transition-all duration-300 flex items-center gap-2 ${
+                    location.pathname === item.path
+                      ? " text-primaryColor active"
+                      : "hover:text-primaryColor text-black "
+                  }`}
+                >
+                  {item.title} <span>{item.icon}</span>
+                </Link>
+              </li>
+            </ul>
 
             {/* Dropdown Menu */}
             {item.subMenu && (
@@ -64,21 +68,25 @@ function Header() {
         ))}
       </div>
 
-      <div className="md:hidden flex rounded-full p-2 text-2xl">
-        {openMenu ? (
-          <RxCross2 onClick={() => setOpenMenu(!openMenu)} />
-        ) : (
-          <RiMenu3Fill onClick={() => setOpenMenu(!openMenu)} />
-        )}
+      {/* Hamburger Icon */}
+      <div className="md:hidden z-50">
+        <label className="flex flex-col gap-[6px] w-6 cursor-pointer relative">
+          <input
+            className="peer hidden"
+            type="checkbox"
+            checked={openMenu}
+            onChange={() => setOpenMenu(!openMenu)}
+          />
+          <div className="rounded-full h-[2px] w-[50%] bg-black duration-500 peer-checked:rotate-[227deg] origin-right peer-checked:-translate-x-[8px] peer-checked:-translate-y-[1px]"></div>
+          <div className="rounded-full h-[2px] w-full bg-black duration-500 peer-checked:-rotate-45"></div>
+          <div className="rounded-full h-[2px] w-[50%] bg-black duration-500 place-self-end peer-checked:rotate-[229deg] origin-left peer-checked:translate-x-[8px] peer-checked:translate-y-[1px]"></div>
+        </label>
       </div>
 
+      {/* Slide Menu */}
       {openMenu && (
-        <div className="w-full z-10 bg-blue-300 absolute top-0 left-0 animate-slide-down">
-          <RxCross2
-            className="text-2xl text-black absolute top-9 right-5 cursor-pointer"
-            onClick={() => setOpenMenu(false)}
-          />
-          <div className="flex flex-col mt-16 bg-blue-300">
+        <div className="w-full h-screen z-40 bg-pink-300 fixed top-0 left-0 animate-slide-left">
+          <div className="flex flex-col items-center mt-28">
             {headerNavLink.map((item) => (
               <Link
                 key={item.id}
@@ -89,6 +97,94 @@ function Header() {
                 {item.title}
               </Link>
             ))}
+            <button
+              onClick={() => setOpenDialog(!openDialog)}
+              className=" border relative flex items-center mt-10 border-black hover:border-slate-500 
+      rounded-full px-4 py-2  group overflow-hidden transition-all duration-300 w-[125px]"
+            >
+              {/* Enquiry Text (Hidden on Hover) */}
+              <span className="group-hover:opacity-0 transition-all duration-300">
+                contact
+              </span>
+
+              {/* Icon Container (Expands on Hover) */}
+              <div
+                className="absolute right-0 w-9 h-9 bg-white rounded-full p-1.5 flex items-center justify-center 
+        transition-all duration-300 group-hover:w-full group-hover:rounded-full"
+              >
+                <MdArrowOutward
+                  size={20}
+                  className="transition-transform duration-300 group-hover:scale-125"
+                />
+              </div>
+            </button>
+
+            {openDialog && (
+              <div className="fixed inset-0 z-10 flex items-center justify-center p-4 bg-black bg-opacity-30">
+                <div className="w-full mt-12 bg-blue-300 overflow-hidden rounded-md shadow-lg flex-col max-w-4xl">
+                  <div className="md:w-full relative ">
+                    <RxCross2
+                      size={26}
+                      className="absolute right-2 top-3 cursor-pointer text-slate-400 hover:text-black"
+                      onClick={() => setOpenDialog(false)}
+                    />
+                    <img
+                      className="h-36 w-full"
+                      src="https://img.freepik.com/free-vector/contact-concept-landing-page_52683-20526.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740"
+                      alt="contact"
+                    />
+                  </div>
+                  <div className="md:w-full p-4 mt-2">
+                    <div className="flex flex-col gap-4 mb-3">
+                      <TextField
+                        size="small"
+                        fullWidth
+                        label="Full Name"
+                        variant="outlined"
+                      />
+                      <TextField
+                        size="small"
+                        fullWidth
+                        label="Email"
+                        variant="outlined"
+                      />
+
+                      <FormControl fullWidth variant="outlined">
+                        <InputLabel id="demo-simple-select-label">
+                          Select Service
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          // value={age}
+                          label="Select Service"
+                          // onChange={handleChange}
+                        >
+                          <MenuItem value={10}>SEO</MenuItem>
+                          <MenuItem value={20}>Web Development</MenuItem>
+                          <MenuItem value={30}>Graphics Design</MenuItem>
+                        </Select>
+                      </FormControl>
+
+                      <TextField
+                        size="small"
+                        label="Enquiry"
+                        multiline
+                        rows={3}
+                        fullWidth
+                        variant="outlined"
+                      />
+                      <button
+                        type="submit"
+                        className="bg-blue-500 mt-1 rounded-md py-2 text-white  hover:opacity-80"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -97,22 +193,22 @@ function Header() {
       <div className="hidden md:flex">
         <button
           onClick={() => setOpenDialog(!openDialog)}
-          className=" border relative flex items-center border-black hover:border-slate-500 
+          className=" border relative flex items-center border-primaryColor 
       rounded-full px-4 py-2  group overflow-hidden transition-all duration-300 w-[125px]"
         >
           {/* Enquiry Text (Hidden on Hover) */}
-          <span className="group-hover:opacity-0 transition-opacity duration-300">
+          <span className="group-hover:opacity-0 transition-opacity text-primaryColor duration-300">
             contact
           </span>
 
           {/* Icon Container (Expands on Hover) */}
           <div
-            className="absolute right-0 w-9 h-9 bg-white rounded-full p-1.5 flex items-center justify-center 
+            className="absolute right-0 w-10 h-10 bg-primaryColor rounded-full p-1.5 flex items-center justify-center 
         transition-all duration-300 group-hover:w-full group-hover:rounded-full"
           >
             <MdArrowOutward
               size={20}
-              className="transition-transform duration-300 group-hover:scale-125"
+              className="transition-transform duration-300 group-hover:scale-125 text-white"
             />
           </div>
         </button>
@@ -133,11 +229,21 @@ function Header() {
                   className="absolute right-2 cursor-pointer text-slate-400 hover:text-black"
                   onClick={() => setOpenDialog(false)}
                 />
-                <div className="flex flex-col gap-4 mt-12 mb-7">
-                  <TextField fullWidth label="Full Name" variant="outlined" />
-                  <TextField fullWidth label="Email" variant="outlined" />
+                <div className="flex flex-col gap-5 mt-12 mb-7">
+                  <TextField
+                    fullWidth
+                    size="small"
+                    label="Full Name"
+                    variant="outlined"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    label="Email"
+                    variant="outlined"
+                  />
 
-                  <FormControl fullWidth variant="outlined">
+                  <FormControl fullWidth size="small" variant="outlined">
                     <InputLabel id="demo-simple-select-label">
                       Select Service
                     </InputLabel>
