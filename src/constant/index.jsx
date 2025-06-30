@@ -10,17 +10,17 @@ import { FiSearch } from "react-icons/fi";
 import { SlGlobe } from "react-icons/sl";
 
 export const headerNavLink = [
-  { id: "1", title: "Home", path: "/", refKey: "contactRef"  },
-  { id: "2", title: "About", path: "/about", refKey: "aboutSection"   },
+  { id: "1", title: "Home", link: "home",  },
+  { id: "2", title: "About",link: "about"   },
   {
     id: "3",
     title: "Services",
-    path: "/services",
+    link: "services",
     icon: <IoChevronDownSharp />,
     subMenu: ["Web Development", "SEO", "Design"],
   },
-  { id: "4", title: "Projects", path: "/projects" },
-  { id: "5", title: "Blogs", path: "/blogs" },
+  { id: "4", title: "Projects", link: "projects" },
+  { id: "5", title: "Blogs", link: "blogs" },
 ];
 
 export const companyLogos = [
@@ -204,6 +204,34 @@ export const testimonials = [
     name: "Salman Khan",
     role: "web developer",
   },
+];
+
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Top 5 SEO Trends in 2025",
+    img:"https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    date: "June 26, 2025",
+    author: "TechEnchant",
+    content: "Discover how AI, voice search, and mobile-first indexing are changing SEO this year..."
+  },
+  {
+    id: 2,
+    title: "Why Every Brand Needs a Social Media Strategy",
+    img:"https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    date: "June 20, 2025",
+    author: "TechEnchant",
+    content: "Learn how consistent social media content builds brand trust and increases conversions..."
+  },
+  {
+    id: 2,
+    title: "Why Every Brand Needs a Social Media Strategy",
+    date: "June 20, 2025",
+    img:"https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    author: "TechEnchant",
+    content: "Learn how consistent social media content builds brand trust and increases conversions..."
+  },
+  
 ];
 
 export const contactInfo = [

@@ -1,16 +1,30 @@
 body{
-    background: #e8f1fa;
+    background: #ffffff;
 }
+/* body{
+    background: #e8f1fa;
+} */
 .container{
     width: 90%;
     margin: auto;
 }
+.gradient{
+  background-image: linear-gradient(to bottom, #def1fe, #a5d7ff, #70baff, #3b9bff, #007aff);
+}
+.testimonials_gradient{
+  background: radial-gradient(circle,rgba(181, 212, 245, 1) 0%, rgba(0, 122, 255, 1) 100%);
+
+
+}
+.active {
+  @apply text-primaryColor ;
+}
 
 .homeCatSlider .swiper-button-prev,
 .homeCatSlider .swiper-button-next {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
   border-radius: 50%;
   background-color: #007aff;
   color: white;
@@ -34,5 +48,6 @@ body{
   color: white;
 }
 .link:hover{
-color: orangered;
+color: #007aff;
+text-decoration: underline;
 }

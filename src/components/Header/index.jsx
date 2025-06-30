@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { headerNavLink } from "../constant";
-import { Link, useLocation } from "react-router-dom";
-import { RiMenu3Fill } from "react-icons/ri";
+import { headerNavLink } from "../../constant";
+import { useLocation } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import TextField from "@mui/material/TextField";
 import { MdArrowOutward } from "react-icons/md";
@@ -9,7 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import { InputLabel } from "@mui/material";
-import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-scroll";
 
 function Header() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -19,30 +18,31 @@ function Header() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className="w-full fixed top-0 z-10 flex justify-between items-center px-3 md:px-28 md:py-5 py-7 bg-[#e8f1fa]">
+    <div className="w-full py-6 sticky bg-[#DEF1FE] top-0 z-10 flex justify-between items-center px-28">
       {/* Logo */}
-      <div>
+      <div className="w-[25%] bg-red-00">
         <Link to="/">
-          <h1 className="md:text-2xl text-xl uppercase font-bold bg-gradient-to-t from-primaryColor to-blue-300 text-transparent bg-clip-text">
-            TechEnchant.
+          <h1 className="md:text-2xl cursor-pointer text-xl uppercase font-bold bg-gradient-to-r from-blue-500 to-purple-700 text-transparent bg-clip-text">
+            TechEnchant
           </h1>
         </Link>
       </div>
 
       {/* Navigation Links */}
-      <div className="md:flex gap-4 uppercase hidden ">
+      <div className="w-[50%] bg-red-00 flex items-center justify-center bg-red-00 uppercase gap-4  ">
         {headerNavLink.map((item) => (
-          <div key={item.id} className="relative group list-none ">
+          <div key={item.id} className="relative group list-none bg-red-00 ">
             {/* Main Nav Item */}
             <ul>
-              <li>
+              <li className="cursor-pointer p-1">
                 <Link
-                  to={item.path}
-                  className={`px-4 py-2 text-base transition-all duration-300 flex items-center gap-2 ${
-                    location.pathname === item.path
-                      ? " text-primaryColor active"
-                      : "hover:text-primaryColor text-black "
-                  }`}
+                  to={item.link}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="bg-green-00 text-base transition-all duration-300 flex items-center gap-2 active:text-primaryColor
+                  "
                 >
                   {item.title} <span>{item.icon}</span>
                 </Link>
@@ -190,7 +190,7 @@ function Header() {
       )}
 
       {/* Enquiry Button with Dialog */}
-      <div className="hidden md:flex">
+      <div className="w-[25%]  flex justify-end bg-red-00">
         <button
           onClick={() => setOpenDialog(!openDialog)}
           className=" border relative flex items-center border-primaryColor 

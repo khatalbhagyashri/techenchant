@@ -7,10 +7,10 @@ import {
 
 function Footer() {
   return (
-    <section className=" w-full h-full bg-[#97c7f7] flex flex-col md:px-28 px-6 ">
-      <div className="bg-sky-00 flex flex-col md:flex-row justify-between border-b py-5">
+    <section className=" w-full h-full  flex flex-col md:px-28 px-6 bg-[#DEF1FE] ">
+      <div className="bg-sky-00 flex flex-col md:flex-row justify-between border-b border-white py-5">
         <div className="md:w-[40%] mt-4">
-          <h1 className="text-2xl font-extrabold uppercase bg-gradient-to-t from-primaryColor to-blue-400 text-transparent bg-clip-text">
+          <h1 className="md:text-2xl text-xl uppercase font-bold bg-gradient-to-r from-blue-500 to-purple-700 text-transparent bg-clip-text">
             TechEnchant
           </h1>
           <p className="text-base mt-2 font-light">
@@ -25,7 +25,16 @@ function Footer() {
         <div className="md:w-[15%] md:ml-12 mt-4">
           <h1 className="text-lg font-medium text-primaryColor">Quick Links</h1>
           {headerNavLink.map((item) => (
-            <h1 key={item.id} className="text-base mt-1 cursor-pointer">
+            <h1
+              key={item.id}
+              className="link text-base mt-1 cursor-pointer"
+              onClick={() => {
+                const section = document.getElementById(item.link);
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               {item.title}
             </h1>
           ))}
@@ -58,7 +67,7 @@ function Footer() {
               return (
                 <div key={id} className="">
                   <a href={icon.url} target="_blank" rel="noopener noreferrer">
-                    <span className="text-3xl text-primaryColor">
+                    <span className="text-3xl text-orange-600">
                       {icon.icon}
                     </span>
                   </a>
@@ -70,7 +79,7 @@ function Footer() {
       </div>
 
       <div className="flex justify-center items-center py-5">
-        <h1 className="text-base text-orange-600">
+        <h1 className="text-base text-primaryColor">
           © TechEnchant. All Rights Reserved
         </h1>
       </div>

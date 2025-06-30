@@ -14,6 +14,7 @@ module.exports = {
         "slide-left": "slide-left 0.3s ease-out forwards",
       },
       colors: {
+        bodyColor :"#e8f1fa",
         primaryColor: "#007aff",
         secondaryColor: "#FF9A00"
       },

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaQuoteLeft } from "react-icons/fa6";
 import { testimonials } from "../../constant";
+import bannerImg from "../../assets/Bg.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,7 +13,13 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 function Testimonials() {
   return (
-    <section className="bg-[#cde2f7] md:px-28 px-6 h-[90vh] flex flex-col justify-center">
+    <section
+    
+      className=" md:px-28 px-6 h-[90vh] flex flex-col justify-center bg-cover bg-center rounded-[70px]"
+        style={{
+    backgroundImage: `url(${bannerImg})`
+  }}
+    >
       <div className="flex flex-col items-center">
         <span className="border border-black rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
           Testimonials
@@ -54,7 +61,7 @@ function Testimonials() {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-[#97c7f7] md:w-96 md:h-64 rounded-xl p-8 flex flex-col justify-around">
+              <div className="bg-[#DEF1FE] md:w-96 md:h-64 rounded-xl p-8 flex flex-col justify-around">
                 <FaQuoteLeft size={24} />
                 <h1 className="text-sm font-light mt-3">{item.review}</h1>
                 <div className="flex gap-3 mt-5">

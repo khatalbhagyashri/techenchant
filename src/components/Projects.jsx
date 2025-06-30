@@ -20,7 +20,7 @@ function Projects() {
       : projects.filter((proj) => proj.category === selectedCategory);
 
   return (
-    <section className=" md:px-28 px-6 py-0 h-[100vh] flex flex-col items-center justify-center">
+    <section id="projects" className=" md:px-28 px-6 py-0 h-[100vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
         <span className="border border-black rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
           Our Projects
@@ -76,7 +76,7 @@ function Projects() {
         >
           {filteredProjects.map((proj) => (
             <SwiperSlide key={proj.id}>
-              <div className="border border-black rounded-xl p-3 shadow hover:shadow-lg transition">
+              <div className="bg-gray-200 rounded-xl p-3 shadow hover:shadow-lg transition">
                 <img src={proj.img} alt="img" className="rounded-lg w-full h-[220px]" />
                 <h2 className="text-xl font-semibold mt-3">{proj.title}</h2>
                 <p className="text-sm text-gray-500">{proj.category}</p>

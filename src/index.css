@@ -6,54 +6,26 @@
   font-family: "Poppins", sans-serif;
 }
 
-.custom-shape-divider-bottom-1744263711 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
+.custom-shape-divider-bottom-1751032529 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1744263711 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 133px;
+.custom-shape-divider-bottom-1751032529 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 140px;
 }
 
-.custom-shape-divider-bottom-1744263711 .shape-fill {
-  /* fill: #FFFFFF; */
-  fill: #cde2f7;
-}
-
-.wavy-line {
-  --s: 10px; /* size of the wave */
-  --b: 4px; /* thickness of the line */
-  --m: 0.7; /* curvature of the wave [0 - 2] */
-  --width: 100%; /* custom width */
-  --height: 40px; /* custom height */
-
-  background: #008c9e;
-  --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b) / 2);
-
-  width: var(--width);
-  height: var(--height);
-
-  --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
-  mask: radial-gradient(
-        var(--R) at left 50% bottom calc(-1 * var(--m) * var(--s)),
-        var(--_g)
-      )
-      calc(50% - 2 * var(--s)) calc(50% - var(--s) / 2 - var(--b) / 2) /
-      calc(4 * var(--s)) calc(var(--s) + var(--b)) repeat-x,
-    radial-gradient(
-        var(--R) at left 50% top calc(-1 * var(--m) * var(--s)),
-        var(--_g)
-      )
-      50% calc(50% + var(--s) / 2 + var(--b) / 2) / calc(4 * var(--s))
-      calc(var(--s) + var(--b)) repeat-x;
+.custom-shape-divider-bottom-1751032529 .shape-fill {
+    /* fill: #E8F1FA; */
+    fill: #DEF1FE;
 }
 
 .stamp {
@@ -62,6 +34,7 @@
   width: 170px;
   aspect-ratio: 1.;
   padding: var(--r);
+  /* background: #cde2f7; */
   background: #cde2f7;
   mask: 
    radial-gradient(circle closest-side at 50% 50%, #0000 66%, #000 67%) round

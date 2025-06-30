@@ -1,28 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Body from "./components/Body";
-import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
-import Blogs from "./components/Blogs";
+import { motion } from "framer-motion";
+import { Toaster } from "react-hot-toast";
+import Home from "./Pages/Home";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Body />}>
-            <Route index element={<Home />} />
-
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/blogs" element={<Blogs />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div className="w-full h-auto">
+      <Toaster />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
   );
 }
 
