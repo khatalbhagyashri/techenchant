@@ -23,7 +23,7 @@ function Projects() {
     <section id="projects" className=" md:px-28 px-6 py-0 h-[100vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
         <span className="border border-black rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
-          Our Projects
+          Our Work
         </span>
         <h1 className="text-2xl font-semibold text-orange-600 mt-5">
           Some of Our Amazing Projects

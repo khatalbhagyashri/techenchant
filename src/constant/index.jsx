@@ -8,19 +8,35 @@ import { FaFedex, FaStripe } from "react-icons/fa";
 import { SiPuma } from "react-icons/si";
 import { FiSearch } from "react-icons/fi";
 import { SlGlobe } from "react-icons/sl";
+import { GoLightBulb } from "react-icons/go";
+import { IoCartOutline } from "react-icons/io5";
+import { FaMobileScreenButton } from "react-icons/fa6";
+import { AiFillThunderbolt } from "react-icons/ai";
+import { RiToolsFill } from "react-icons/ri";
+import { FaFacebookSquare } from "react-icons/fa";
 
 export const headerNavLink = [
-  { id: "1", title: "Home", link: "home",  },
-  { id: "2", title: "About",link: "about"   },
-  {
-    id: "3",
+   {
+    id: "1",
     title: "Services",
-    link: "services",
+    // link: "services",
     icon: <IoChevronDownSharp />,
-    subMenu: ["Web Development", "SEO", "Design"],
+    subMenu: [
+      {
+        title: "Web Development",
+        link: "/web-dev",
+      },
+      { title: "SEO", link: "/seo" },
+      {
+        title: "Design",
+        link: "/design",
+      },
+    ],
   },
-  { id: "4", title: "Projects", link: "projects" },
-  { id: "5", title: "Blogs", link: "blogs" },
+  { id: "2", title: "About", link: "about" },
+ 
+  { id: "3", title: "Works", link: "works" },
+  { id: "4", title: "Blogs", link: "blogs" },
 ];
 
 export const companyLogos = [
@@ -76,20 +92,10 @@ export const socialMediaIcons = [
     icon: <FaSquareXTwitter />,
     url: "https://x.com/TechEnchant",
   },
-];
-
-export const footerPrivacyLinks = [
   {
-    id: "1",
-    title: "Privacy Policy",
-  },
-  {
-    id: "2",
-    title: "Terms & Conditions",
-  },
-  {
-    id: "3",
-    title: "Support",
+    id: "4",
+    icon: <FaFacebookSquare />,
+    url: "https://www.facebook.com/people/Techenchant/61578327130433/",
   },
 ];
 
@@ -210,28 +216,30 @@ export const blogPosts = [
   {
     id: 1,
     title: "Top 5 SEO Trends in 2025",
-    img:"https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
     date: "June 26, 2025",
     author: "TechEnchant",
-    content: "Discover how AI, voice search, and mobile-first indexing are changing SEO this year..."
+    content:
+      "Discover how AI, voice search, and mobile-first indexing are changing SEO this year...",
   },
   {
     id: 2,
     title: "Why Every Brand Needs a Social Media Strategy",
-    img:"https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
     date: "June 20, 2025",
     author: "TechEnchant",
-    content: "Learn how consistent social media content builds brand trust and increases conversions..."
+    content:
+      "Learn how consistent social media content builds brand trust and increases conversions...",
   },
   {
     id: 2,
     title: "Why Every Brand Needs a Social Media Strategy",
     date: "June 20, 2025",
-    img:"https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
     author: "TechEnchant",
-    content: "Learn how consistent social media content builds brand trust and increases conversions..."
+    content:
+      "Learn how consistent social media content builds brand trust and increases conversions...",
   },
-  
 ];
 
 export const contactInfo = [
@@ -249,5 +257,62 @@ export const contactInfo = [
     id: "3",
     icon: <MdOutlineEmail />,
     title: "techenchant8@gmail.com",
+  },
+];
+
+export const webDevService = [
+  {
+    id: "1",
+    icon: <GoLightBulb />,
+    title: "Custom Website Development",
+    content:
+      "Tailored web solutions built from scratch—crafted to match your brand, business goals, and audience.",
+  },
+  {
+    id: "2",
+    icon: <IoCartOutline />,
+    title: "E-commerce Web Development",
+    content:
+      "Build powerful online stores using Shopify, WooCommerce, or custom solutions. Secure payment, smooth checkout, and mobile-optimized.",
+  },
+  {
+    id: "3",
+    icon: <FaMobileScreenButton />,
+    title: "Responsive Design",
+    content:
+      "Websites that look and work perfectly across all devices—mobiles, tablets, and desktops.",
+  },
+  {
+    id: "4",
+    icon: <AiFillThunderbolt />,
+    title: "Performance & Speed Optimization",
+    content:
+      "Blazing fast load times and optimized performance for better SEO and user experience.",
+  },
+  {
+    id: "5",
+    icon: <RiToolsFill />,
+    title: "Website Redesign & Revamp",
+    content:
+      "Already have a website? We revamp outdated sites into modern, engaging, and efficient platforms.",
+  },
+];
+
+export const techStack = [
+  {
+    id: "1",
+    title: "Frontend",
+    subTitle: ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+  },
+  {
+    id: "2",
+    title: "Backend",
+    subTitle: ["Node.js", " Express.js", "MongoDB"],
+  },
+  { id: "3", title: "CMS", subTitle: ["WordPress", "Headless CMS (Strapi)"] },
+  {
+    id: "4",
+    title: "Tools",
+    subTitle: ["Git", "GitHub", "Vercel", "Netlify", "Render "],
   },
 ];

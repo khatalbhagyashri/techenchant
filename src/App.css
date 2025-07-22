@@ -13,12 +13,19 @@ body{
 }
 .testimonials_gradient{
   background: radial-gradient(circle,rgba(181, 212, 245, 1) 0%, rgba(0, 122, 255, 1) 100%);
-
-
 }
 .active {
-  @apply text-primaryColor ;
+  @apply text-textColor  ;
+  /* @apply  font-semibold ; */
 }
+
+@font-face {
+  font-family: 'SuperTrivia';
+  src: url('./assets/fonts/SuperTrivia-DYRw1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .homeCatSlider .swiper-button-prev,
 .homeCatSlider .swiper-button-next {
@@ -48,6 +55,10 @@ body{
   color: white;
 }
 .link:hover{
-color: #007aff;
+color: #0d3c6b;
 text-decoration: underline;
+}
+
+.gradientSubMenu {
+  background-image: radial-gradient(circle, #6533eb, #423fd8, #2043c2, #0044aa, #004290, #243978, #2c3061, #2c294c, #2c1e36, #241522, #180c13, #000000);
 }

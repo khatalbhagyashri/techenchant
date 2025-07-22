@@ -14,9 +14,13 @@ module.exports = {
         "slide-left": "slide-left 0.3s ease-out forwards",
       },
       colors: {
-        bodyColor :"#e8f1fa",
+        bodyColor: "#e8f1fa",
         primaryColor: "#007aff",
-        secondaryColor: "#FF9A00"
+        secondaryColor: "#FF9A00",
+        textColor: "#0d3c6b",
+      },
+      fontFamily: {
+        super: ["SuperTrivia", "sans-serif"],
       },
     },
   },

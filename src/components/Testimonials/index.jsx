@@ -1,7 +1,7 @@
 import React from "react";
 import { FaQuoteLeft } from "react-icons/fa6";
 import { testimonials } from "../../constant";
-import bannerImg from "../../assets/Bg.jpg";
+import bannerImg from "../../assets/images/Bg.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,7 +21,7 @@ function Testimonials() {
   }}
     >
       <div className="flex flex-col items-center">
-        <span className="border border-black rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
+        <span className="border border-white text-white rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
           Testimonials
         </span>
         <h1 className="text-2xl text-orange-600 font-semibold mt-5">

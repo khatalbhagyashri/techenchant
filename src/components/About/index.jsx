@@ -1,4 +1,4 @@
-import { aboutItems } from "../constant";
+import { aboutItems } from "../../constant";
 
 function About() {
   return (
@@ -14,7 +14,7 @@ function About() {
         />
       </div>
       <div className="md:w-1/2 bg-gray-00 p-4">
-        <span className="border mt-20 border-black rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
+        <span className="border mt-20 text-textColor border-textColor rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
           About Us
         </span>
         <h1 className="text-3xl text-orange-600 font-semibold mt-7">
@@ -33,11 +33,11 @@ function About() {
               key={item.id}
               className="stamp flex flex-col gap-1 justify-center text-center p-1"
             >
-              <h1 className="text-3xl font-bold text-primaryColor">
+              <h1 className="text-3xl font-bold text-orange-600">
                 {item.count}
               </h1>
 
-              <h1 className="text-base  whitespace-pre-line font-medium text-primaryColor">
+              <h1 className="text-base  whitespace-pre-line font-medium text-orange-600">
                 {item.title}
               </h1>
             </div>

@@ -3,7 +3,7 @@ import { services } from "../constant";
 
 function Services() {
   return (
-    <section id="services" className="w-full h-[90vh] bg-primaryColor md:px-28 px-6 flex flex-col items-center justify-center rounded-[70px]">
+    <section id="services" className="w-full h-[90vh] bg-textColor md:px-28 px-6 flex flex-col items-center justify-center rounded-[70px]">
       <div className="flex flex-col items-center">
         <span className="border border-white text-white rounded-md text-sm px-2 py-1 md:text-base md:px-3 md:py-1.5">
           Our Services

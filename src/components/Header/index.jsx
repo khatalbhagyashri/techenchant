@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { headerNavLink } from "../../constant";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import TextField from "@mui/material/TextField";
 import { MdArrowOutward } from "react-icons/md";
@@ -8,7 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import { InputLabel } from "@mui/material";
-import { Link } from "react-scroll";
+import logo from "../../assets/images/logo.png";
 
 function Header() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -17,12 +17,13 @@ function Header() {
   const [age, setAge] = React.useState("");
   const [openMenu, setOpenMenu] = useState(false);
 
-  return (
+    return (
     <div className="w-full py-6 sticky bg-[#DEF1FE] top-0 z-10 flex justify-between items-center px-28">
       {/* Logo */}
-      <div className="w-[25%] bg-red-00">
-        <Link to="/">
-          <h1 className="md:text-2xl cursor-pointer text-xl uppercase font-bold bg-gradient-to-r from-blue-500 to-purple-700 text-transparent bg-clip-text">
+      <div className="w-[25%] flex items-center">
+        <Link to="/" className="flex">
+          <img src={logo} alt="logo" className="w-11" />
+          <h1 className="md:text-2xl cursor-pointer text-xl uppercase font-bold text-[#0d3c6b] ">
             TechEnchant
           </h1>
         </Link>
@@ -34,7 +35,7 @@ function Header() {
           <div key={item.id} className="relative group list-none bg-red-00 ">
             {/* Main Nav Item */}
             <ul>
-              <li className="cursor-pointer p-1">
+              <li className="cursor-pointer p-1 group">
                 <Link
                   to={item.link}
                   spy={true}
@@ -44,7 +45,7 @@ function Header() {
                   className="bg-green-00 text-base transition-all duration-300 flex items-center gap-2 active:text-primaryColor
                   "
                 >
-                  {item.title} <span>{item.icon}</span>
+                  {item.title} <span className="group-hover:rotate-180 transform transition-transform">{item.icon}</span>
                 </Link>
               </li>
             </ul>
@@ -58,7 +59,8 @@ function Header() {
                       key={index}
                       className="px-4 py-2 text-sm text-slate-600 capitalize hover:bg-gray-100 cursor-pointer"
                     >
-                      {subItem}
+                     <Link to={subItem.link}>{subItem.title}</Link>
+
                     </li>
                   ))}
                 </ul>
@@ -193,17 +195,17 @@ function Header() {
       <div className="w-[25%]  flex justify-end bg-red-00">
         <button
           onClick={() => setOpenDialog(!openDialog)}
-          className=" border relative flex items-center border-primaryColor 
+          className=" border relative flex items-center border-textColor 
       rounded-full px-4 py-2  group overflow-hidden transition-all duration-300 w-[125px]"
         >
           {/* Enquiry Text (Hidden on Hover) */}
-          <span className="group-hover:opacity-0 transition-opacity text-primaryColor duration-300">
+          <span className="group-hover:opacity-0 transition-opacity text-textColor duration-300">
             contact
           </span>
 
           {/* Icon Container (Expands on Hover) */}
           <div
-            className="absolute right-0 w-10 h-10 bg-primaryColor rounded-full p-1.5 flex items-center justify-center 
+            className="absolute right-0 w-10 h-10 bg-textColor rounded-full p-1.5 flex items-center justify-center 
         transition-all duration-300 group-hover:w-full group-hover:rounded-full"
           >
             <MdArrowOutward

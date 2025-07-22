@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { blogPosts } from "../../constant";
 import { TbExternalLink } from "react-icons/tb";
 
-function index() {
+function BlogsPage() {
   const [showAll, setShowAll] = useState(false);
   const visiblePosts = showAll ? blogPosts : blogPosts.slice(0, 2);
   return (
@@ -14,7 +14,7 @@ function index() {
         <h1 className="border inline-block border-black rounded-md text-sm px-2 py-1 md:text-base md:px-2 md:py-1">
           Blogs
         </h1>
-        <p className="mt-3 font-normal text-primaryColor text-base">
+        <p className="mt-3 font-normal text-textColor text-base">
           Stay updated with expert tips and trends in digital marketing and web
           strategies.
         </p>
@@ -48,7 +48,7 @@ function index() {
       <div className="text-center">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="px-4 py-2 bg-primaryColor text-white rounded-full hover:bg-blue-700 transition"
+          className="px-4 py-2 bg-textColor text-white rounded-full hover:bg-blue-700 transition"
         >
           {showAll ? "Show Less" : "Read More"}
         </button>
@@ -57,4 +57,4 @@ function index() {
   );
 }
 
-export default index;
+export default BlogsPage;
