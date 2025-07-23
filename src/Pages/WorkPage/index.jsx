@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from '../../components/Header'
 
-function SEOService() {
+function WorkPage() {
   return (
     <div>
-      <Header />
-      seo
+        <Header />
+        <h1>Work</h1>
     </div>
   )
 }
 
-export default SEOService
+export default WorkPage

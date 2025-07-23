@@ -6,6 +6,10 @@ import WebDevService from "./Pages/WebDevSevice";
 import SEOService from "./Pages/SEOService";
 import DesignService from "./Pages/DesignService";
 import HomePage from "./Pages/HomePage";
+import BlogsPage from "./Pages/BlogsPage";
+import WorkPage from "./Pages/WorkPage";
+import AboutPage from "./Pages/AboutPage";
+import ServicesPage from "./Pages/ServicesPage";
 
 
 function App() {
@@ -14,9 +18,13 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/web-dev" element={<WebDevService />} />
-        <Route path="/seo" element={<SEOService />} />
-        <Route path="/design" element={<DesignService />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/works" element={<WorkPage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/services/web-dev" element={<WebDevService />} />
+        <Route path="/services/seo" element={<SEOService />} />
+        <Route path="/services/design" element={<DesignService />} />
       </Routes>
     </div>
   );

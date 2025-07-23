@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { blogPosts } from "../../constant";
 import { TbExternalLink } from "react-icons/tb";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 function BlogsPage() {
   const [showAll, setShowAll] = useState(false);
-  const visiblePosts = showAll ? blogPosts : blogPosts.slice(0, 2);
+  const visiblePosts = showAll ? blogPosts : blogPosts.slice(0, 3);
   return (
+    <>
+    <Header />
     <section
       id="blogs"
       className=" w-full flex bg-gray-00 flex-col items-center md:px-28 px-6 py-20 gap-10"
@@ -20,7 +24,7 @@ function BlogsPage() {
         </p>
       </div>
 
-      <div className="w-full grid bg-red-00 grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="w-full grid bg-red-00 grid-cols-1 md:grid-cols-3 gap-5">
         {visiblePosts.map((post) => (
           <div
             key={post.id}
@@ -54,6 +58,8 @@ function BlogsPage() {
         </button>
       </div>
     </section>
+    <Footer />
+    </>
   );
 }
 

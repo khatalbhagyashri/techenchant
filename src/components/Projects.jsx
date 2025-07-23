@@ -76,7 +76,7 @@ function Projects() {
         >
           {filteredProjects.map((proj) => (
             <SwiperSlide key={proj.id}>
-              <div className="bg-gray-200 rounded-xl p-3 shadow hover:shadow-lg transition">
+              <div className="bg-[#DEF0FE] rounded-xl p-3 shadow hover:shadow-lg transition">
                 <img src={proj.img} alt="img" className="rounded-lg w-full h-[220px]" />
                 <h2 className="text-xl font-semibold mt-3">{proj.title}</h2>
                 <p className="text-sm text-gray-500">{proj.category}</p>

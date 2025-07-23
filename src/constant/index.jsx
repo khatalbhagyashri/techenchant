@@ -16,27 +16,27 @@ import { RiToolsFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 
 export const headerNavLink = [
+  { id: "1", title: "Home", link: "/" },
    {
-    id: "1",
+    id: "2",
     title: "Services",
-    // link: "services",
+    link: "/services",
     icon: <IoChevronDownSharp />,
     subMenu: [
       {
         title: "Web Development",
-        link: "/web-dev",
+        link: "/services/web-dev",
       },
-      { title: "SEO", link: "/seo" },
+      { title: "SEO", link: "/services/seo" },
       {
         title: "Design",
-        link: "/design",
+        link: "/services/design",
       },
     ],
   },
-  { id: "2", title: "About", link: "about" },
- 
-  { id: "3", title: "Works", link: "works" },
-  { id: "4", title: "Blogs", link: "blogs" },
+  { id: "3", title: "About", link: "/about" },
+  { id: "4", title: "Works", link: "/works" },
+  { id: "5", title: "Blogs", link: "/blogs" },
 ];
 
 export const companyLogos = [
@@ -232,7 +232,16 @@ export const blogPosts = [
       "Learn how consistent social media content builds brand trust and increases conversions...",
   },
   {
-    id: 2,
+    id: 3,
+    title: "Why Every Brand Needs a Social Media Strategy",
+    date: "June 20, 2025",
+    img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
+    author: "TechEnchant",
+    content:
+      "Learn how consistent social media content builds brand trust and increases conversions...",
+  },
+  {
+    id: 4,
     title: "Why Every Brand Needs a Social Media Strategy",
     date: "June 20, 2025",
     img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?ga=GA1.1.2100011829.1732618920&semt=ais_hybrid&w=740",
